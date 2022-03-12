@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    image: aronpc/cati-php:7.2-nginx
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+networks:
+  default:
+    external:
+      name: web
