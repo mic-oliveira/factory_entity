@@ -2,6 +2,7 @@
 
 namespace EntityFactory\Traits;
 
+use EntityFactory\Factory\AbstractFactory;
 use Exception;
 
 trait FillableTrait
@@ -17,7 +18,7 @@ trait FillableTrait
             if(!array_key_exists($key, $class->getDefaultProperties())) {
                 throw new Exception('Property not found in class.');
             }
-            $this->$setter($value);
+            class_parents(AbstractFactory::class) ? $this->$setter($value->make()) : $this->$setter($value);
         }
         return $this;
     }

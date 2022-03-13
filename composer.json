@@ -1,6 +1,6 @@
 {
-    "name": "michaelferreira/symfony-factory",
-    "description": "Factory for symphony entities",
+    "name": "michaelferreira/entity-factory",
+    "description": "Factory for entities class with faker",
     "license": "MIT",
     "authors": [
         {

@@ -10,11 +10,13 @@ abstract class AbstractFactory
     private $count;
     protected $faker;
     protected $entity;
+    private $attributes;
 
     public function __construct()
     {
         $this->count = 1;
         $this->faker = Factory::create();
+        $this->attributes = $this->define() ?? [];
     }
 
     public function count(?int $count = 1): AbstractFactory
@@ -34,13 +36,9 @@ abstract class AbstractFactory
 
     public function makeOne()
     {
-        return (new $this->entity)->fill($this->define());
+        $this->attributes = $this->define();
+        return (new $this->entity)->fill($this->attributes);
     }
 
-    public function create()
-    {
-
-    }
-
-    abstract public function define();
+    abstract protected function define();
 }
