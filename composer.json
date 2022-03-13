@@ -23,7 +23,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "SymphonyFactory\\Tests\\": "tests/"
+            "EntityFactory\\Tests\\": "tests/"
         }
     },
     "scripts": {
