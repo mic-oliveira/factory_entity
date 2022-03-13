@@ -14,7 +14,6 @@ class FactoryTest extends TestCase
     {
         $factory = new PersonFactory();
         $result = $factory->count(2)->make();
-        var_dump($result);
         $this->assertCount(2, $result);
     }
 
@@ -30,7 +29,6 @@ class FactoryTest extends TestCase
     {
         $factory = new LegalPersonFactory();
         $result = $factory->makeOne();
-        var_dump($result);
         $this->assertNotEmpty($result->getDocument());
         $this->assertInstanceOf(Person::class, $result->getPerson());
     }
