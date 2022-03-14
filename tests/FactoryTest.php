@@ -29,7 +29,6 @@ class FactoryTest extends TestCase
     {
         $factory = new LegalPersonFactory();
         $result = $factory->makeOne();
-        var_dump($result->toArray());
         $this->assertNotEmpty($result->getDocument());
         $this->assertInstanceOf(Person::class, $result->getPerson());
     }
